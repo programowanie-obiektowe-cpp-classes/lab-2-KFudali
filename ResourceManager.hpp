@@ -5,16 +5,19 @@
 class ResourceManager
 {
         private:
-        Resource resource;
-
+            Resource resource;
         public:
         ResourceManager()
         {
-            Resource resource;
-        }
 
+        }
+        ResourceManager(const ResourceManager& rm):resource{rm.resource}
+        {
+
+        }
         double get()
         {
             return resource.get();
         }
+
 };

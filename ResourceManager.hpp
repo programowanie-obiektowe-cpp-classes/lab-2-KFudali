@@ -4,5 +4,17 @@
 
 class ResourceManager
 {
-    // Twoja implementacja tutaj
+        private:
+        Resource resource;
+
+        public:
+        ResourceManager()
+        {
+            Resource resource;
+        }
+
+        double get()
+        {
+            return resource.get();
+        }
 };

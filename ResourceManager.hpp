@@ -9,19 +9,20 @@ class ResourceManager
         public:
         ResourceManager()
         {
-            Resource res;
-            resource = &res;
+            resource = new Resource;
         }
         double get()
         {
             return resource->get();
         }
-        ResourceManager(const ResourceManager& rm):resource{rm.resource}
+        ResourceManager(const ResourceManager& copiedManager)
         {
-
+            resource = new Resource{*copiedManager.resource};
         }
         ResourceManager& operator=(const ResourceManager& movedManager)
         {
+            delete resource;
+            resource = new Resource{*movedManager.resource};
             return *this;
         }
         ResourceManager(ResourceManager&& sourceManager)

@@ -8,6 +8,7 @@ set_target_properties(Lab2 PROPERTIES
     INTERFACE_COMPILE_FEATURES cxx_std_17
 )
 
+add_executable(main "main.cpp")
 add_executable(zad1 "test.cpp" "zad1.cpp")
 add_executable(zad2 "test.cpp" "zad2.cpp")
 add_executable(zad3 "test.cpp" "zad3.cpp")

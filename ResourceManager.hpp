@@ -19,10 +19,17 @@ class ResourceManager
         {
             resource = new Resource{*copiedManager.resource};
         }
-        ResourceManager& operator=(const ResourceManager& movedManager)
+        ResourceManager& operator=(const ResourceManager& moveManager)
         {
             delete resource;
-            resource = new Resource{*movedManager.resource};
+            resource = new Resource{*moveManager.resource};
+            return *this;
+        }
+        ResourceManager& operator=(ResourceManager&& moveManager)
+        {
+            delete resource;
+            resource = moveManager.resource;
+            moveManager.resource = nullptr;
             return *this;
         }
         ResourceManager(ResourceManager&& sourceManager)

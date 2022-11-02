@@ -27,8 +27,7 @@ class ResourceManager
         }
         ResourceManager(ResourceManager&& sourceManager)
         {
-            ResourceManager movedManager;
-            movedManager.resource = sourceManager.resource;
+            resource = sourceManager.resource;
             sourceManager.resource = nullptr;
         }
         ~ResourceManager()
